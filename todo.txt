@@ -13,3 +13,4 @@
 - config.ini als Einstellungsdatei - implementiert
 - bei GameOver Punkte auf 0 setzen und Level neustarten, aber nicht Spiel neu starten - implementiert
 - ggf. CBlock als Basisklasse anlegen, dadurch mehrere unterschiedliche Block-Typen
+hallo
