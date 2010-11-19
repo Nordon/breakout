@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>BreakOut: C:/Users/TSS/Programmieren/Visual Studio 2010/Projects/SFML-Breakout/SFML-Breakout/Log.cpp Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Erzeugt von Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>C:/Users/TSS/Programmieren/Visual Studio 2010/Projects/SFML-Breakout/SFML-Breakout/Log.cpp</h1>  </div>
+</div>
+<div class="contents">
+<a href="_log_8cpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &quot;<a class="code" href="_log_8h.html">Log.h</a>&quot;</span>
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 CLog::CLog(<span class="keywordtype">void</span>)
+<a name="l00004"></a>00004 {
+<a name="l00005"></a>00005         log = std::ofstream(<span class="stringliteral">&quot;log.html&quot;</span>);
+<a name="l00006"></a>00006         <span class="keywordflow">if</span>(log.is_open())
+<a name="l00007"></a>00007         {
+<a name="l00008"></a>00008                 log &lt;&lt; <span class="stringliteral">&quot;&lt;html&gt;&quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;&lt;head&gt;&lt;title&gt;BreakOut-Log&lt;/title&gt;&lt;/head&gt;&quot;</span> &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;&lt;body&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00009"></a>00009         }
+<a name="l00010"></a>00010 }
+<a name="l00011"></a>00011 
+<a name="l00012"></a><a class="code" href="class_c_log.html#a69cbe7b2c98a564c0d425b8cc17d3db6">00012</a> <a class="code" href="class_c_log.html#a69cbe7b2c98a564c0d425b8cc17d3db6">CLog::~CLog</a>(<span class="keywordtype">void</span>)
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014         log &lt;&lt; <span class="stringliteral">&quot;&lt;/body&gt;\n&lt;/html&gt;&quot;</span>;
+<a name="l00015"></a>00015         log.close();
+<a name="l00016"></a>00016 }
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <a class="code" href="class_c_log.html">CLog</a> CLog::inst = <a class="code" href="class_c_log.html">CLog</a>();
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="class_c_log.html#ac0aff492c93d1ed3463a34324c70b7f5">00020</a> <span class="keywordtype">bool</span> <a class="code" href="class_c_log.html#ac0aff492c93d1ed3463a34324c70b7f5">CLog::write</a>(std::string eintrag)
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022         log &lt;&lt; <span class="stringliteral">&quot;&lt;p&gt;&quot;</span> &lt;&lt; eintrag &lt;&lt; <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00023"></a>00023         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_c_log.html#acbe3138baf758a73bda257b1fbcd9c5c">00026</a> <span class="keywordtype">bool</span> <a class="code" href="class_c_log.html#acbe3138baf758a73bda257b1fbcd9c5c">CLog::writeInfo</a>(std::string eintrag)
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028         log &lt;&lt; <span class="stringliteral">&quot;&lt;p&gt;&lt;font color=\&quot;#00CC00\&quot;&gt;&lt;b&gt;Info:&lt;/b&gt;&lt;/font&gt; &quot;</span> &lt;&lt; eintrag &lt;&lt; <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00029"></a>00029         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00030"></a>00030 }
+<a name="l00031"></a>00031 
+<a name="l00032"></a><a class="code" href="class_c_log.html#a17b98e67552e6b641c7ca594805fea36">00032</a> <span class="keywordtype">bool</span> <a class="code" href="class_c_log.html#a17b98e67552e6b641c7ca594805fea36">CLog::writeWarning</a>(std::string eintrag)
+<a name="l00033"></a>00033 {
+<a name="l00034"></a>00034         log &lt;&lt; <span class="stringliteral">&quot;&lt;p&gt;&lt;font color=\&quot;#FFB200\&quot;&gt;&lt;b&gt;Warnung:&lt;/b&gt;&lt;/font&gt; &quot;</span> &lt;&lt; eintrag &lt;&lt; <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00035"></a>00035         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00036"></a>00036 }
+<a name="l00037"></a>00037 
+<a name="l00038"></a><a class="code" href="class_c_log.html#a37d0b81a9fec72e3587ac6938156fcef">00038</a> <span class="keywordtype">bool</span> <a class="code" href="class_c_log.html#a37d0b81a9fec72e3587ac6938156fcef">CLog::writeError</a>(std::string eintrag)
+<a name="l00039"></a>00039 {
+<a name="l00040"></a>00040         log &lt;&lt; <span class="stringliteral">&quot;&lt;p&gt;&lt;font color=\&quot;#FF0000\&quot;&gt;&lt;b&gt;Fehler:&lt;/b&gt;&lt;/font&gt; &quot;</span> &lt;&lt; eintrag &lt;&lt; <span class="stringliteral">&quot;&lt;/p&gt;&quot;</span> &lt;&lt; std::endl;
+<a name="l00041"></a>00041         <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00042"></a>00042 }
+<a name="l00043"></a>00043 
+<a name="l00044"></a><a class="code" href="class_c_log.html#ae9e99e1ab81c1ceabae7dd5163ea656a">00044</a> <a class="code" href="class_c_log.html">CLog</a> &amp;<a class="code" href="class_c_log.html#ae9e99e1ab81c1ceabae7dd5163ea656a">CLog::getInst</a>()
+<a name="l00045"></a>00045 {
+<a name="l00046"></a>00046         <span class="keywordflow">return</span> inst;
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Makrodefinitionen</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Erzeugt am Tue Nov 16 2010 19:34:56 für BreakOut von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

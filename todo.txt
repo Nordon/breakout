@@ -1,0 +1,14 @@
+- Logfunktion zur Fehlerueberpruefung - implementiert als html, verbessert
+- Menue einbauen
+- Leben anzeigen und abziehen - implementiert
+- Punkte berechnen und anzeigen - implementiert
+- Highscore
+- Grafik verbessern
+- Geschwindigkeit optimieren
+- Abprallen von Board verbessern - implementiert
+- Balancing
+- Board mit Maus bewegen - implementiert
+- Powerups
+- unterschiedliche Bloecke hinzufuegen (teilweise implementiert)
+- config.ini als Einstellungsdatei - implementiert
+- bei GameOver Punkte auf 0 setzen und Level neustarten, aber nicht Spiel neu starten - implementiert

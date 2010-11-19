@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>BreakOut: C:/Users/TSS/Programmieren/Visual Studio 2010/Projects/SFML-Breakout/SFML-Breakout/Ball.cpp Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javaScript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Erzeugt von Doxygen 1.7.1 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+--></script>
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&nbsp;der&nbsp;Dateien</span></a></li>
+      <li><a href="globals.html"><span>Datei-Elemente</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>C:/Users/TSS/Programmieren/Visual Studio 2010/Projects/SFML-Breakout/SFML-Breakout/Ball.cpp</h1>  </div>
+</div>
+<div class="contents">
+<a href="_ball_8cpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * Ball.cpp</span>
+<a name="l00003"></a>00003 <span class="comment"> *</span>
+<a name="l00004"></a>00004 <span class="comment"> *  Created on: 07.05.2010</span>
+<a name="l00005"></a>00005 <span class="comment"> *      Author: TSS</span>
+<a name="l00006"></a>00006 <span class="comment"> */</span>
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="_ball_8h.html">Ball.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="_typedef_8h.html">Typedef.h</a>&quot;</span>
+<a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="_block_8h.html">Block.h</a>&quot;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="_board_8h.html">Board.h</a>&quot;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="_log_8h.html">Log.h</a>&quot;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a><a class="code" href="_ball_8cpp.html#a598a3330b3c21701223ee0ca14316eca">00014</a> <span class="preprocessor">#define PI 3.14159265</span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span>
+<a name="l00016"></a><a class="code" href="class_c_ball.html#a122a8c19775f75c343b4089ef4114b61">00016</a> <a class="code" href="class_c_ball.html#a122a8c19775f75c343b4089ef4114b61">CBall::CBall</a>(<span class="keywordtype">float</span> mittelpunktx,<span class="keywordtype">float</span> mittelpunkty,<span class="keywordtype">float</span> radius_) : sf::Shape(sf::Shape::Circle(0,0,radius_,sf::Color(0,0,0))), radius(radius_)
+<a name="l00017"></a>00017 {
+<a name="l00018"></a>00018         this-&gt;SetPosition(mittelpunktx,mittelpunkty);
+<a name="l00019"></a>00019         this-&gt;<a class="code" href="class_c_ball.html#a76ed7d2e842c7754711732386fca5b7f">createRV</a>();
+<a name="l00020"></a>00020 }
+<a name="l00021"></a>00021 
+<a name="l00022"></a><a class="code" href="class_c_ball.html#a85ee6db52d3ab36c818e557e2718cc8c">00022</a> <a class="code" href="class_c_ball.html#a85ee6db52d3ab36c818e557e2718cc8c">CBall::~CBall</a>(<span class="keywordtype">void</span>)
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="class_c_ball.html#a42eea9da4f60cd1adb86ee54c215ca16">00026</a> sf::Rect&lt;float&gt; <a class="code" href="class_c_ball.html#a42eea9da4f60cd1adb86ee54c215ca16">CBall::GetBallRect</a>()
+<a name="l00027"></a>00027 {
+<a name="l00028"></a>00028         <span class="keywordflow">return</span> sf::Rect&lt;float&gt;(this-&gt;GetPosition().x-10,this-&gt;GetPosition().y-10,this-&gt;GetPosition().x+10,this-&gt;GetPosition().y+10);
+<a name="l00029"></a>00029 }
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="class_c_ball.html#a72eb26b8dfb9a94ec6f1923c8dc7ffa8">00031</a> <span class="keywordtype">float</span> <a class="code" href="class_c_ball.html#a72eb26b8dfb9a94ec6f1923c8dc7ffa8">CBall::GetRadius</a>()
+<a name="l00032"></a>00032 {
+<a name="l00033"></a>00033         <span class="keywordflow">return</span> radius;
+<a name="l00034"></a>00034 }
+<a name="l00035"></a>00035 
+<a name="l00036"></a><a class="code" href="class_c_ball.html#a76ed7d2e842c7754711732386fca5b7f">00036</a> <span class="keywordtype">void</span> <a class="code" href="class_c_ball.html#a76ed7d2e842c7754711732386fca5b7f">CBall::createRV</a>()
+<a name="l00037"></a>00037 {
+<a name="l00038"></a>00038         sf::Vector2f vektor(0,0);
+<a name="l00039"></a>00039         <span class="keywordtype">float</span> x_tmp = sf::Randomizer::Random(-1.f, 1.f);
+<a name="l00040"></a>00040         <span class="keywordtype">float</span> y_tmp=-sqrt(1.f-pow(x_tmp,2.f));<span class="comment">//muss beim Startvektor negativ sein, denn der Ball klebt auf dem Board und soll beim abfeuern nach oben fliegen</span>
+<a name="l00041"></a>00041         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x=x_tmp;
+<a name="l00042"></a>00042         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.y=y_tmp;
+<a name="l00043"></a>00043 }
+<a name="l00044"></a>00044 
+<a name="l00045"></a><a class="code" href="class_c_ball.html#ae12dc686d783e8665418ddb761b95555">00045</a> <span class="keywordtype">void</span> <a class="code" href="class_c_ball.html#ae12dc686d783e8665418ddb761b95555">CBall::correctRV</a>()
+<a name="l00046"></a>00046 {
+<a name="l00047"></a>00047         <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.y&gt;=0 &amp;&amp; this-&gt;rv.y&lt;0.1)
+<a name="l00048"></a>00048         {
+<a name="l00049"></a>00049                 this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.y=0.1f;
+<a name="l00050"></a>00050                 <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x&gt;=0)
+<a name="l00051"></a>00051                         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x=0.9949874371f;
+<a name="l00052"></a>00052                 <span class="keywordflow">else</span>
+<a name="l00053"></a>00053                         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x=-0.9949874371f;
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.y&lt;0 &amp;&amp; this-&gt;rv.y&gt;-0.1)
+<a name="l00056"></a>00056         {
+<a name="l00057"></a>00057                 this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.y=-0.1f;
+<a name="l00058"></a>00058                 <span class="keywordflow">if</span>(this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x&gt;=0)
+<a name="l00059"></a>00059                         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x=0.9949874371f;
+<a name="l00060"></a>00060                 <span class="keywordflow">else</span>
+<a name="l00061"></a>00061                         this-&gt;<a class="code" href="class_c_ball.html#a91324f404e8a6b10037a59ea0093c595">rv</a>.x=-0.9949874371f;
+<a name="l00062"></a>00062         }
+<a name="l00063"></a>00063 }
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Alle</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Klassen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Dateien</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Funktionen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variablen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Aufzählungen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Aufzählungswerte</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Makrodefinitionen</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Erzeugt am Tue Nov 16 2010 19:34:56 für BreakOut von&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
+</body>
+</html>

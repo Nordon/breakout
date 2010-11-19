@@ -1,0 +1,72 @@
+Version 0.6
+07.05.2010:
+- Es wird kein Konsolenfenster mit dem Programm zusammen gestartet
+
+Version 0.6.5
+10.05.2010:
+- Level-Dateien werden zu Beginn alle eingelesen, Inhalt wird in Array gespeichert
+- Bloecke werden in einem dynamischen Array gespeichert
+- kann mehrere Level einlesen und ins Spiel einbauen
+
+Version 0.6.6
+24.05.2010:
+- SFML-Bibliotheken sind jetzt statisch gelinkt
+- es sind nun auch Bloecke moeglich, die man 2-mal treffen muss
+- Klasse CLog hinzugefuegt, ermoeglicht einfaches Schreiben in Log-Datei
+
+Version 0.6.7
+25.05.2010:
+- Statt Tastatur jetzt Maussteuerung, spaeter Auswahl ueber Optionsmenue
+
+Version 0.7.0
+25.05.2010:
+- Ball "klebt" zu Spielbeginn am Schlaeger
+- bis zu 425 Bloecke moeglich
+- Log wird jetzt als .html Datei erstellt
+
+Version 0.7.1
+26.05.2010:
+- Ball fliegt nicht mehr durch Bloecke durch
+- Klasse zum Verwalten von Einstellungen in Dateien hinzugefuegt
+- ueber config.ini kann Steuerungsart gewaehlt werden
+
+Version 0.7.2
+27.05.2010:
+- Abprallen am Board überarbeitet
+
+Version 0.7.3
+27.05.2010:
+- RV von Ball wird in neuem Level neu gesetzt
+28.05.2010:
+- sollte weniger CPU-Auslastung verursachen
+
+Version 0.8.0:
+29.05.2010:
+- VC-Redist statisch gelinkt
+- oberer Rand hat Breite von 40 Pixel
+- max. Anzahl der Bloecke auf 391 reduziert
+- Punkte-,Lebens- und Levelanzeige am oberen Rand eingebaut
+- zur Zeit werden keine Punkte angerechnet
+
+Version 0.8.1:
+29.05.2010:
+- Routinen zum Einlesen der Level-Dateien verbessert
+30.05.2010:
+- Geschwindigkeit des Balls runtergesetzt
+- Wenn eigentlich ein Leben abgezogen werden sollte und man sofort geklickt hat, wurde keins abgezogen
+- Kollisionsabfrage wird nicht mehr in Klasse CBall sondern in CGameBoard durchgeführt
+- Ball sollte nicht mehr durch rote Blöcke fliegen
+- wird mit Visual Studio 2010 weiterentwickelt
+07.06.2010:
+- alle Kollisionsabfragen sind jetzt in der Klasse CGameBoard
+- jeder Treffer bringt 10 Punkte
+
+Version 0.9.0:
+16.11.2010:
+- Nach GameOver muss das Spiel nicht komplett neugestartet werden, es kann auch beim aktuellen Level neugestartet werden, allerdings werden die Punkte auf 0 gesetzt
+- Log Funktion überarbeitet, muss nicht mehr extra gestartet und geschlossen werden
+
+Version 0.9.1:
+18.11.2010:
+- Klasse CBlock besitzt statische Variable, die die noch nicht zerstoerten Bloecke zaehlt, bei 0 ist das Level geschafft
+- Bugfix: bei zu langen Dateien wurde manchmal ein Block zu viel erzeugt
