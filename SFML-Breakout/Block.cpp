@@ -7,6 +7,7 @@
 
 #include "Block.h"
 #include "Typedef.h"
+#include "Log.h"
 
 CBlock::CBlock(float posx, float posy, int leben) : m_leben(leben)
 {
@@ -46,6 +47,10 @@ bool CBlock::alleZerstoert()
 
 CBlock::~CBlock(void)
 {
+	if(m_visible)//wenn Block noch sichtbar wenn er zerstoert wird (z.B bei Game Over)
+	{
+		counter--;
+	}
 }
 
 bool CBlock::isVisible()

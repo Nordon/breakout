@@ -70,3 +70,6 @@ Version 0.9.1:
 18.11.2010:
 - Klasse CBlock besitzt statische Variable, die die noch nicht zerstoerten Bloecke zaehlt, bei 0 ist das Level geschafft
 - Bugfix: bei zu langen Dateien wurde manchmal ein Block zu viel erzeugt
+21.11.2010:
+- wenn im Level ein Game Over war, wurde die Anzahl der zerstoerten Bloecke falsch bestimmt
+- Vector Block speichert nun Zeiger auf die Blöcke, dies verhindert das anlegen von Kopien

@@ -35,7 +35,7 @@ public:
 	enum GameBoardState {Starting, Running, Paused, SystemPaused, LevelComplete, LostLife, Won, GameOver};
 private:
 	sf::Shape Rand1,Rand2,Rand3;
-	std::vector<CBlock> Block;
+	std::vector<CBlock*> Block;
 	float m_ElapsedTime;
 	CBoard Board;
 	CBall Ball;

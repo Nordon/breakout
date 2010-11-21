@@ -107,8 +107,8 @@ void CGameBoard::render()
 	//sichtbare Bloecke zeichnen
 	for(int i=0;i<anzahl_bloecke;i++)
 	{
-		if(Block[i].isVisible())
-			App.Draw(Block[i]);
+		if(Block[i]->isVisible())
+			App.Draw(*Block[i]);
 	}
 
 	//bei manchen Spielzustaenden wird eine Meldung ausgegeben, z.B. bei Pause oder Sieg
@@ -196,9 +196,9 @@ void CGameBoard::move()
 		//Kollision mit allen Bloecken ueberpruefen
 		for(int i=0;i<anzahl_bloecke;i++)
 		{
-			if(!Block[i].isVisible())//nur mit noch sichtbaren Bloecken testen
+			if(!Block[i]->isVisible())//nur mit noch sichtbaren Bloecken testen
 				continue;
-			switchKollisionBallMitBlock(Ball,Block[i],checkKollisionBallMitBlock(Ball,Block[i]));
+			switchKollisionBallMitBlock(Ball,*Block[i],checkKollisionBallMitBlock(Ball,*Block[i]));
 		}
 
 		Ball.correctRV();//ggf. RV korrigieren wenn y-Bewegung zu klein
@@ -330,12 +330,18 @@ void CGameBoard::loadLevel(unsigned int level)
 {
 	if(level>spielfeld.size() || level<=0)//Fehler, Level exisitiert nicht
 		return;
+	//alte Bloecke loeschen
+	for(unsigned int i=0;i<Block.size();i++)
+	{
+		delete Block[i];
+		Block[i]=0;
+	}
 	Block.clear();
 	for(unsigned int i=0;i<spielfeld[level-1].size();++i)
 	{
 		if(spielfeld[level-1][i])//Wenn auf 0 gesetzt, wird der Block nicht erzeugt
 		{
-			Block.push_back(CBlock(i%17*45.f+20,i/17*15.f+45,spielfeld[level-1][i]));
+			Block.push_back(new CBlock(i%17*45.f+20,i/17*15.f+45,spielfeld[level-1][i]));
 		}
 	}
 	anzahl_bloecke=static_cast<int>(Block.size());
