@@ -39,3 +39,6 @@ Version 0.8.1:
 
 Version 0.9.0:
 - nach GameOver werden die Punkte zurückgesetzt und das aktuelle Level wird neugestartet
+
+Version 0.9.1:
+- bei zu langen Level-Dateien wurde manchmal ein Block zu viel erzeugt
