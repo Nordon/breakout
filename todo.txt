@@ -2,6 +2,7 @@
 - Menue einbauen
 - Leben anzeigen und abziehen - implementiert
 - Punkte berechnen und anzeigen - implementiert
+- Bonuspunkte vergeben nach bestimmten Kriterien
 - Highscore
 - Grafik verbessern
 - Geschwindigkeit optimieren
@@ -13,3 +14,5 @@
 - config.ini als Einstellungsdatei - implementiert
 - bei GameOver Punkte auf 0 setzen und Level neustarten, aber nicht Spiel neu starten - implementiert
 - ggf. CBlock als Basisklasse anlegen, dadurch mehrere unterschiedliche Block-Typen
+- Blöcke frei positionierbar machen
+- Level Editor
