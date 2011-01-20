@@ -98,7 +98,7 @@ int CGame::exec()//main Loop
 
         // Display window contents on screen
         this->Display();
-		sf::Sleep(0.001f);
+		//sf::Sleep(0.001f);
     }
 
     return EXIT_SUCCESS;
