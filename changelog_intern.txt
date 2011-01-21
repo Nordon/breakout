@@ -73,3 +73,7 @@ Version 0.9.1:
 21.11.2010:
 - wenn im Level ein Game Over war, wurde die Anzahl der zerstoerten Bloecke falsch bestimmt
 - Vector Block speichert nun Zeiger auf die Blöcke, dies verhindert das anlegen von Kopien
+
+Version 0.9.2:
+20.01.2011:
+- VSync aktiviert und sleep zwischen Frames rausgenommen, sollte jetzt flüssiger laufen
