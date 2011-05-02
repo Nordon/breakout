@@ -135,6 +135,8 @@ void CGameBoard::move()
 {
 	//Zeit setzen
 	m_ElapsedTime = App.GetFrameTime();
+	if(m_ElapsedTime>0.02)
+		m_ElapsedTime = 0.02;
 
 	if(gameState==Paused)//Wenn Spiel pausiert wird es nicht bewegt
 		return;
