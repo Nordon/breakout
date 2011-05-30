@@ -76,4 +76,9 @@ Version 0.9.1:
 
 Version 0.9.2:
 20.01.2011:
-- VSync aktiviert und sleep zwischen Frames rausgenommen, sollte jetzt flüssiger laufen
+- VSync aktiviert, Pause zwischen den Frames entfernt
+- Spiel läuft dadurch jetzt flüssiger
+
+Version 0.9.3:
+02.05.2011:
+- Wenn Frametime >0.02, dann wird sie auf 0.02 gesetzt, dadurch FPS minimal 50

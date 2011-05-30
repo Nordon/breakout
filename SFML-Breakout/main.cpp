@@ -5,7 +5,7 @@
 int main()
 {
     // Create the main rendering window
-    CGame App(sf::VideoMode(800, 600, 32), "SFML-BreakOut 0.9.2");
+    CGame App(sf::VideoMode(800, 600, 32), "SFML-BreakOut 0.9.3");
 	//App.SetFramerateLimit(0);
 	App.UseVerticalSync(true);
 	return App.exec();

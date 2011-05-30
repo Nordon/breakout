@@ -44,4 +44,7 @@ Version 0.9.1:
 - bei zu langen Level-Dateien wurde manchmal ein Block zu viel erzeugt
 
 Version 0.9.2:
-- Performance etwas verbessert, sollte jetzt flüssiger laufen
+- FPS auf 60 begrenzt
+
+Version 0.9.3:
+- Ball sollte jetzt deutlich seltener durch Blöcke fliegen
